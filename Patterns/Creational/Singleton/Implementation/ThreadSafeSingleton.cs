@@ -7,7 +7,7 @@
 
         private ThreadSafeSingleton() { }
 
-        public static ThreadSafeSingleton GetInsance()
+        public static ThreadSafeSingleton GetInstance()
         {
             if(_instance == null)
             {

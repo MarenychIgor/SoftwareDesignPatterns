@@ -1,9 +1,10 @@
 ﻿using Patterns.Behavioural.Strategy.Abstraction;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Patterns.Behavioural.Strategy
 {
-    public class Client : IClient
+    public class Client
     {
         private IStrategy _strategy;
 
@@ -11,6 +12,10 @@ namespace Patterns.Behavioural.Strategy
             => _strategy = strategy;
 
         public IEnumerable<int> Sort(IEnumerable<int> source)
-            => _strategy.Sort(source);
+        {
+            return _strategy != null
+                ? _strategy.Sort(source)
+                : source.OrderBy(x => x);
+        }
     }
 }

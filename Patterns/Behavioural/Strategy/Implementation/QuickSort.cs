@@ -19,23 +19,24 @@ namespace Patterns.Behavioural.Strategy.Implementation
             if (left >= right)
                 return;
 
+            var value = array[left];
             var i = left;
             var j = right;
 
             while (i < j)
             {
-                while (i < j && array[j] >= array[left])
+                while (i < j && array[j] >= value)
                     j--;
 
                 array[i] = array[j];
 
-                while (i < j && array[i] <= array[left])
+                while (i < j && array[i] <= value)
                     i++;
 
                 array[j] = array[i];
             }
 
-            array[i] = array[left];
+            array[i] = value;
             Sort(array, left, i - 1);
             Sort(array, i + 1, right);
         }
