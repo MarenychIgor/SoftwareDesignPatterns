@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Patterns.Creational.Singleton
+namespace Patterns.Creational.Singleton.Implementation
 {
     public class LazySingleton
     {

@@ -1,4 +1,4 @@
-﻿namespace Patterns.Creational.Singleton
+﻿namespace Patterns.Creational.Singleton.Implementation
 {
     public sealed class Singleton
     {
