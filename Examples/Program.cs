@@ -11,6 +11,9 @@ namespace Examples
             var strategy = new StrategyExample();
             strategy.RunExample();
 
+            var chain = new ChainOfResponsibilityExample();
+            chain.RunExample();
+
             // Creational examples
             var singleton = new SingletonExample();
             singleton.RunExample();   
