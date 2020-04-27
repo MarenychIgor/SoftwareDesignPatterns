@@ -7,7 +7,7 @@ namespace Patterns.Behavioural.ChainOfResponsibility.Implementation
     {
         protected override string Key => "application";
 
-        internal override void HandleHelp(string key)
+        public override void HandleHelp(string key)
         {
             if (key == Key)
                 Console.WriteLine($"{nameof(ApplicationHelpHandler)} help message.");
