@@ -1,5 +1,6 @@
 ﻿using Examples.Behavioural;
 using Examples.Creational;
+using Examples.Structural;
 
 namespace Examples
 {
@@ -17,6 +18,7 @@ namespace Examples
             // Creational examples
             var singleton = new SingletonExample();
             singleton.RunExample();   
+            singleton.RunExample();
         }
     }
 }
