@@ -17,8 +17,11 @@ namespace Examples
 
             // Creational examples
             var singleton = new SingletonExample();
-            singleton.RunExample();   
             singleton.RunExample();
+
+            // Structural examples
+            var adapter = new AdapterExample();
+            adapter.RunExample();
         }
     }
 }

@@ -9,10 +9,10 @@ namespace Patterns.Behavioural.ChainOfResponsibility.Abstraction
         protected abstract string Key { get; }
 
 
-        internal virtual void HandleHelp(string key)
+        public virtual void HandleHelp(string key)
             => Console.WriteLine($"There is no handler for '{key}' help key.");
 
-        internal void SetSuccessor(HelpHandler successor)
+        public void SetSuccessor(HelpHandler successor)
             => Successor = successor;
     }
 }
