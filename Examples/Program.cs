@@ -19,6 +19,9 @@ namespace Examples
             var singleton = new SingletonExample();
             singleton.RunExample();
 
+            var builder = new BuilderExample();
+            builder.RunExample();
+
             // Structural examples
             var adapter = new AdapterExample();
             adapter.RunExample();
