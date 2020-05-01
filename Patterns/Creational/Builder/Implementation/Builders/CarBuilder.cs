@@ -6,22 +6,22 @@ namespace Patterns.Creational.Builder.Implementation.Builders
 {
     public class CarBuilder : VehicleBuilder
     {
-        public override Vehicle Build()
-            => new Vehicle(VehicleType.Car, BuildManufacturer(), BuildEngine(), BuildSafety(), BuildTransmission(), BuildWheels());
+        public override VehicleType GetVehicleType()
+            => VehicleType.Car;
 
-        protected override Manufacturer BuildManufacturer()
+        public override Manufacturer GetManufacturer()
             => new Manufacturer(brand: "Toyota", model: "Camry", year: 2014);
 
-        protected override Engine BuildEngine()
+        public override Engine GetEngine()
             => new Engine(capacity: 2.5, power: 181, cylinders: 4, EngineType.Atmospheric, FuelType.Petrol);
 
-        protected override Safety BuildSafety()
+        public override Safety GetSafety()
             => new Safety(airbags: 9);
 
-        protected override Transmission BuildTransmission()
+        public override Transmission GetTransmission()
             => new Transmission(gears: 6, TransmissionType.Automatic, DriveType.FrontWheelDrive);
 
-        protected override Wheels BuildWheels()
+        public override Wheels GetWheels()
             => new Wheels(count: 4, diameter: 17);
     }
 }

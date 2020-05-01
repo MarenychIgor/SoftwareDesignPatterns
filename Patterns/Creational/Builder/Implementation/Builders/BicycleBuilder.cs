@@ -6,22 +6,22 @@ namespace Patterns.Creational.Builder.Implementation.Builders
 {
     public class BicycleBuilder : VehicleBuilder
     {
-        public override Vehicle Build()
-            => new Vehicle(VehicleType.Bicycle, BuildManufacturer(), BuildEngine(), BuildSafety(), BuildTransmission(), BuildWheels());
+        public override VehicleType GetVehicleType()
+            => VehicleType.Bicycle;
 
-        protected override Manufacturer BuildManufacturer()
+        public override Manufacturer GetManufacturer()
             => new Manufacturer(brand: "BMX", model: "Street", year: 1992);
 
-        protected override Engine BuildEngine()
+        public override Engine GetEngine()
             => new Engine();
 
-        protected override Safety BuildSafety()
+        public override Safety GetSafety()
             => new Safety();
 
-        protected override Transmission BuildTransmission()
+        public override Transmission GetTransmission()
             => new Transmission();
 
-        protected override Wheels BuildWheels()
+        public override Wheels GetWheels()
             => new Wheels(count: 2, diameter: 20);
     }
 }

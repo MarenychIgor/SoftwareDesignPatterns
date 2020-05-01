@@ -7,7 +7,15 @@ namespace Patterns.Creational.Builder.Implementation
         public Vehicle GetVehicle()
         {
             var builder = new T();
-            return builder.Build();
+
+            var type = builder.GetVehicleType();
+            var manufacturer = builder.GetManufacturer();
+            var engine = builder.GetEngine();
+            var safety = builder.GetSafety();
+            var transmission = builder.GetTransmission();
+            var wheels = builder.GetWheels();
+
+            return new Vehicle(type, manufacturer, engine, safety, transmission, wheels);
         }
     }
 }

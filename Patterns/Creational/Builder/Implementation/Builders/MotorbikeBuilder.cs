@@ -6,22 +6,22 @@ namespace Patterns.Creational.Builder.Implementation.Builders
 {
     public class MotorbikeBuilder : VehicleBuilder
     {
-        public override Vehicle Build()
-            => new Vehicle(VehicleType.Motorbike, BuildManufacturer(), BuildEngine(), BuildSafety(), BuildTransmission(), BuildWheels());
+        public override VehicleType GetVehicleType()
+            => VehicleType.Motorbike;
 
-        protected override Manufacturer BuildManufacturer()
+        public override Manufacturer GetManufacturer()
             => new Manufacturer(brand: "Kawasaki", model: "Ninja 1000", year: 2017);
 
-        protected override Engine BuildEngine()
+        public override Engine GetEngine()
             => new Engine(capacity: 1.0, power: 138, cylinders: 4, EngineType.Atmospheric, FuelType.Petrol);
 
-        protected override Safety BuildSafety()
+        public override Safety GetSafety()
             => new Safety();
 
-        protected override Transmission BuildTransmission()
+        public override Transmission GetTransmission()
             => new Transmission(gears: 6, TransmissionType.Manual, DriveType.RearWheelDrive);
 
-        protected override Wheels BuildWheels()
+        public override Wheels GetWheels()
             => new Wheels(count: 2, diameter: 17);
     }
 }
