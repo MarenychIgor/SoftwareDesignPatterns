@@ -15,6 +15,9 @@ namespace Examples
             var chain = new ChainOfResponsibilityExample();
             chain.RunExample();
 
+            var memento = new MementoExample();
+            memento.RunExample();
+
             // Creational examples
             var singleton = new SingletonExample();
             singleton.RunExample();

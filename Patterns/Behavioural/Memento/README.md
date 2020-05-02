@@ -1,0 +1,3 @@
+Memento is a behavioural pattern as it defines a manner for controlling communication between classes or entities. The memento pattern is used to capture the 
+current state of an object and store it in such a manner that it can be restored at a later time. Importantly, the pattern allows for the internal state of an 
+object to be saved without breaking the rules of encapsulation. This design pattern is commonly used to provide an application with Undo functionality.
