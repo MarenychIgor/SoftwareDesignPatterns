@@ -2,6 +2,9 @@
 
 namespace Patterns.Behavioural.Memento.Abstraction
 {
+    /// <summary>
+    /// Interface for 'Memento' class.
+    /// </summary>
     public interface IStock
     {
         public string Name { get; set; }

@@ -4,6 +4,10 @@ using System.Linq;
 
 namespace Patterns.Behavioural.Strategy.Implementation
 {
+    /// <summary>
+    /// The 'ConcreteStrategy' class.
+    /// Implements the bubble sort algorithm using the <see cref="IStrategy"/> interface.
+    /// </summary>
     public class BubbleSort : IStrategy
     {
         public IEnumerable<int> Sort(IEnumerable<int> source)

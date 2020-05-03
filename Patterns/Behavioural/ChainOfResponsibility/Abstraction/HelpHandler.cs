@@ -1,18 +1,19 @@
-﻿using System;
-
-namespace Patterns.Behavioural.ChainOfResponsibility.Abstraction
+﻿namespace Patterns.Behavioural.ChainOfResponsibility.Abstraction
 {
+    /// <summary>
+    /// The 'Handler' abstract class.
+    /// Defines an interface for handling the requests.
+    /// Implements the successor link (optional).
+    /// </summary>
     public abstract class HelpHandler
     {
         protected HelpHandler Successor { get; private set; }
 
         protected abstract string Key { get; }
 
-
-        public virtual void HandleHelp(string key)
-            => Console.WriteLine($"There is no handler for '{key}' help key.");
-
         public void SetSuccessor(HelpHandler successor)
             => Successor = successor;
+
+        public abstract void HandleHelp(string key);
     }
 }

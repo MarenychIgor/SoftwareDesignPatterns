@@ -6,7 +6,7 @@ namespace Patterns.Creational.Builder.Implementation
 {
     /// <summary>
     /// The 'Director' class
-    /// Constructs an object using the 'Builder' interface.
+    /// Constructs an object using the <see cref="VehicleBuilder"/> interface.
     /// </summary>
     public class Facility 
     { 

@@ -4,7 +4,9 @@ using System;
 namespace Patterns.Behavioural.Memento.Implementation
 {
     /// <summary>
-    /// The 'Originator' class
+    /// The 'Originator' class.
+    /// Creates a <see cref="Stock"/> containing a snapshot of its current internal state.
+    /// Uses the <see cref="Stock"/> to restore its internal state.
     /// </summary>
     public class StockExchange
     {

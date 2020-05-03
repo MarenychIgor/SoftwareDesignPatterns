@@ -6,9 +6,9 @@ namespace Patterns.Creational.Builder.Implementation.Builders
 {
     /// <summary>
     /// The 'ConcreteBuilder' class.
-    /// Constructs and assembles parts of the product by implementing the 'Builder' interface.
+    /// Constructs and assembles parts of the product by implementing the <see cref="VehicleBuilder"/> interface.
     /// Defines and keeps track of the representation it creates.
-    /// Provides an interface for retrieving the 'Product'.
+    /// Provides an interface for retrieving the <see cref="Vehicle"/>.
     /// </summary>
     public class CarBuilder : VehicleBuilder
     {

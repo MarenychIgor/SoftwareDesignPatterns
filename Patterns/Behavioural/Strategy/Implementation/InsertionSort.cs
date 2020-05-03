@@ -4,6 +4,10 @@ using System.Linq;
 
 namespace Patterns.Behavioural.Strategy.Implementation
 {
+    /// <summary>
+    /// The 'ConcreteStrategy' class.
+    /// Implements the insertion sort algorithm using the <see cref="IStrategy"/> interface.
+    /// </summary>
     public class InsertionSort : IStrategy
     {
         public IEnumerable<int> Sort(IEnumerable<int> source)

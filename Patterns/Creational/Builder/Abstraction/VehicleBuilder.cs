@@ -4,7 +4,7 @@ namespace Patterns.Creational.Builder.Abstraction
 {
     /// <summary>
     /// The 'Builder' abstract class.
-    /// Specifies interface for creating parts of a 'Product' object.
+    /// Specifies interface for creating parts of a <see cref="Vehicle"/> object.
     /// </summary>
     public abstract class VehicleBuilder
     {

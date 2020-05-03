@@ -4,7 +4,8 @@ using System;
 namespace Patterns.Behavioural.Memento.Implementation
 {
     /// <summary>
-    /// The 'Memento' class
+    /// The 'Memento' class.
+    /// Stores internal state of the <see cref="StockExchange"/> object.
     /// </summary>
     public class Stock : IStock
     {
