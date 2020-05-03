@@ -2,6 +2,10 @@
 
 namespace Patterns.Structural.Adapter.Implementation
 {
+    /// <summary>
+    /// The 'Adapter' class.
+    /// Adapts the interface <see cref="TextSearchManager"/> to the <see cref="ISearchable"/> interface.
+    /// </summary>
     public class SearchManager : ISearchable
     {
         private readonly TextSearchManager _manager;

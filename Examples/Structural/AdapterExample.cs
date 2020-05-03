@@ -1,4 +1,5 @@
-﻿using Patterns.Structural.Adapter.Implementation;
+﻿using Patterns.Structural.Adapter;
+using Patterns.Structural.Adapter.Implementation;
 
 namespace Examples.Structural
 {
@@ -6,15 +7,15 @@ namespace Examples.Structural
     {
         public void RunExample()
         {
-            var adaptee = new TextSearchManager();
-            var adapter = new SearchManager(adaptee);
+            var adapter = new SearchManager(new TextSearchManager());
+            var client = new Client(adapter);
 
             var source = "String to search";
             var firstSearchTerm = "to";
             var secondSearchTerm = "t";
 
-            var contains = adapter.Contains(source, firstSearchTerm);
-            var hitsCount = adapter.GetHitsCount(source, secondSearchTerm);
+            var contains = client.Contains(source, firstSearchTerm);
+            var hitsCount = client.GetHitsCount(source, secondSearchTerm);
         }
     }
 }
