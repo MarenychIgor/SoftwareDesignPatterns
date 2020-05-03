@@ -1,0 +1,2 @@
+Builder is a creational pattern as it is used to control class instantiation. The builder pattern is used to create complex objects with constituent parts that 
+must be created in the same order or using a specific algorithm. An external class, known as the director, controls the construction algorithm.

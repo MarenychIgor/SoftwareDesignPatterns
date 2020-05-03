@@ -1,0 +1,2 @@
+Adapter is a structural pattern as it defines a manner for creating relationships between classes. The adapter design pattern is used to provide a link between two
+otherwise incompatible types by wrapping the "adaptee" with a class that supports the interface required by the client.
