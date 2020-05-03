@@ -3,23 +3,18 @@ using Patterns.Creational.Builder.Auxilary.Enums;
 
 namespace Patterns.Creational.Builder.Implementation
 {
+    /// <summary>
+    /// The 'Product' class.
+    /// Represents the complex object under construction.
+    /// Includes classes that define the constituent parts.
+    /// </summary>
     public class Vehicle
     {
-        public VehicleType Type { get; private set; }
-        public Manufacturer Manufacturer { get; private set; }
-        public Engine Engine { get; private set; }
-        public Safety Safety { get; private set; }
-        public Transmission Transmission { get; private set; }
-        public Wheels Wheels { get; private set; }
-
-        public Vehicle(VehicleType type, Manufacturer manufacturer, Engine engine, Safety safety, Transmission transmission, Wheels wheels)
-        {
-            Type = type;
-            Manufacturer = manufacturer;
-            Engine = engine;
-            Safety = safety;
-            Transmission = transmission;
-            Wheels = wheels;
-        }
+        public VehicleType Type { get; set; }
+        public Manufacturer Manufacturer { get; set; }
+        public Engine Engine { get; set; }
+        public Safety Safety { get; set; }
+        public Transmission Transmission { get; set; }
+        public Wheels Wheels { get; set; }
     }
 }

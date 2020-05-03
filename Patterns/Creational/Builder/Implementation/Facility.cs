@@ -1,21 +1,54 @@
 ﻿using Patterns.Creational.Builder.Abstraction;
+using Patterns.Creational.Builder.Implementation.Builders;
+using System;
 
 namespace Patterns.Creational.Builder.Implementation
 {
-    public class Facility<T> where T : VehicleBuilder, new()
-    {
-        public Vehicle GetVehicle()
+    /// <summary>
+    /// The 'Director' class
+    /// Constructs an object using the 'Builder' interface.
+    /// </summary>
+    public class Facility 
+    { 
+        public Vehicle Construct(VehicleBuilder builder)
+            => builder switch
+            {
+                BicycleBuilder bicycleBuilder => GetBicycle(bicycleBuilder),
+                CarBuilder carBuilder => GetCar(carBuilder),
+                MotorbikeBuilder motorbikeBuilder => GetMotorbike(motorbikeBuilder),
+                _ => throw new ArgumentException($"Builder type {builder.GetType().Name} is not supported")
+            };
+
+        private Vehicle GetBicycle(BicycleBuilder builder)
         {
-            var builder = new T();
+            builder.BuildType();
+            builder.BuildManufacturer();
+            builder.BuildWheels();
 
-            var type = builder.GetVehicleType();
-            var manufacturer = builder.GetManufacturer();
-            var engine = builder.GetEngine();
-            var safety = builder.GetSafety();
-            var transmission = builder.GetTransmission();
-            var wheels = builder.GetWheels();
+            return builder.GetResult();
+        }
 
-            return new Vehicle(type, manufacturer, engine, safety, transmission, wheels);
+        private Vehicle GetCar(CarBuilder builder)
+        {
+            builder.BuildType();
+            builder.BuildManufacturer();
+            builder.BuildEngine();
+            builder.BuildSafety();
+            builder.BuildTransmission();
+            builder.BuildWheels();
+
+            return builder.GetResult();
+        }
+
+        private Vehicle GetMotorbike(MotorbikeBuilder builder)
+        {
+            builder.BuildType();
+            builder.BuildManufacturer();
+            builder.BuildEngine();
+            builder.BuildTransmission();
+            builder.BuildWheels();
+
+            return builder.GetResult();
         }
     }
 }

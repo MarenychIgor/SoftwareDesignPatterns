@@ -1,27 +1,34 @@
 ﻿using Patterns.Creational.Builder.Abstraction;
 using Patterns.Creational.Builder.Auxilary.Components;
 using Patterns.Creational.Builder.Auxilary.Enums;
+using System;
 
 namespace Patterns.Creational.Builder.Implementation.Builders
 {
+    /// <summary>
+    /// The 'ConcreteBuilder' class.
+    /// Constructs and assembles parts of the product by implementing the 'Builder' interface.
+    /// Defines and keeps track of the representation it creates.
+    /// Provides an interface for retrieving the 'Product'.
+    /// </summary>
     public class BicycleBuilder : VehicleBuilder
     {
-        public override VehicleType GetVehicleType()
-            => VehicleType.Bicycle;
+        public override void BuildType()
+            => vehicle.Type = VehicleType.Bicycle;
 
-        public override Manufacturer GetManufacturer()
-            => new Manufacturer(brand: "BMX", model: "Street", year: 1992);
+        public override void BuildManufacturer()
+            => vehicle.Manufacturer = new Manufacturer(brand: "BMX", model: "Street", year: 1992);
 
-        public override Engine GetEngine()
-            => new Engine();
+        public override void BuildEngine()
+            => throw new InvalidOperationException($"{nameof(VehicleType.Bicycle)} can't have {nameof(Engine)}");
 
-        public override Safety GetSafety()
-            => new Safety();
+        public override void BuildSafety()
+            => throw new InvalidOperationException($"{nameof(VehicleType.Bicycle)} can't have {nameof(Safety)}");
 
-        public override Transmission GetTransmission()
-            => new Transmission();
+        public override void BuildTransmission()
+            => throw new InvalidOperationException($"{nameof(VehicleType.Bicycle)} can't have {nameof(Transmission)}");
 
-        public override Wheels GetWheels()
-            => new Wheels(count: 2, diameter: 20);
+        public override void BuildWheels()
+            => vehicle.Wheels = new Wheels(count: 2, diameter: 20);
     }
 }
