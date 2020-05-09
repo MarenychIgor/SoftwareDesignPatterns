@@ -7,7 +7,7 @@ namespace Patterns.Creational.Singleton.Implementation
     /// Defines an Instance operation that lets clients access its unique instance.
     /// Responsible for creating and maintaining its own unique instance.
     /// </summary>
-    public class LazySingleton
+    public sealed class LazySingleton
     {
         private static Lazy<LazySingleton> _instance = new Lazy<LazySingleton>(new LazySingleton());
 
