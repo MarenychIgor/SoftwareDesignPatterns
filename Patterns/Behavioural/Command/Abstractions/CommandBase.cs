@@ -1,6 +1,4 @@
-﻿using Patterns.Behavioural.Command.Implementation;
-
-namespace Patterns.Behavioural.Command.Abstractions
+﻿namespace Patterns.Behavioural.Command.Abstractions
 {
     /// <summary>
     /// The 'CommandBase' class.
@@ -8,9 +6,9 @@ namespace Patterns.Behavioural.Command.Abstractions
     /// </summary>
     public abstract class CommandBase
     {
-        protected readonly ValidatonService Service;
+        protected readonly IReceiver Service;
 
-        protected CommandBase(ValidatonService service)
+        protected CommandBase(IReceiver service)
             => Service = service;
 
         public abstract bool Execute();

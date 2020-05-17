@@ -17,6 +17,6 @@ namespace Patterns.Behavioural.Command.Implementation
         }
 
         public override bool Execute()
-            => Service.Validate(Login, Password);
+            => Service.Action(Login, Password);
     }
 }
