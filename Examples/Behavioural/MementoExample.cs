@@ -8,7 +8,6 @@ namespace Examples.Behavioural
     {
         private const string _stockName = "AAPL";
 
-        private readonly Broker _broker = new Broker();
         private readonly StockExchange _exchange = new StockExchange();
         private IStock _stock;
 
@@ -28,18 +27,24 @@ namespace Examples.Behavioural
         private void SaveState(decimal price, DateTime date)
         {            
             _exchange.SaveState(_stockName, price, date);
-            _broker.Add(_exchange.GetState());
+            var state = _exchange.GetState();
+
+            _exchange.Add(state);
         }
 
         private void Undo()
         {
-            _exchange.RestoreState(_broker.Undo());
+            var state = _exchange.Undo();
+
+            _exchange.RestoreState(state);
             _stock = _exchange.GetState();
         }
 
         private void Redo()
         {
-            _exchange.RestoreState(_broker.Redo());
+            var state = _exchange.Redo();
+
+            _exchange.RestoreState(state);
             _stock = _exchange.GetState();
         }
     }
