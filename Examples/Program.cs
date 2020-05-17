@@ -18,6 +18,9 @@ namespace Examples
             var memento = new MementoExample();
             memento.RunExample();
 
+            var command = new CommandExample();
+            command.RunExample();
+
             // Creational examples
             var singleton = new SingletonExample();
             singleton.RunExample();
